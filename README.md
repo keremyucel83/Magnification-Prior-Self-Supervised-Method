@@ -35,6 +35,8 @@ Change following folder configuration
 ```tensorboard_path = '/home/logs/tensorboard_bc/'```
 
 
+Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py``` file needs to be run and relevant configuration file  from ```src/self_supervised/experiment_config/single_gpu/```
+
 Original Implemantation and Article is as follows. Code can be still run using Visual Studio however codes needs to be run in terminal by using following order and codes.
 
 **Following part is forked from original repository and only Breakhist part is left and others are removed**
