@@ -3,6 +3,19 @@
 In this forked reporsitory, a self supervised method, suggested by Chhipa, P., Upadhyay,1 R., Pihlgren, G., Saini, R., Uchida, S., Liwicki, M. (2022, September 08) for 
 detecting malign on Histopathological images called Magnification-Prior-Self- Supervised-Method will be reviewed. Project aims to reproduce results explained in the original article and reproduce the results to help researchers focusing similar image classification problem.
 
+Repository is created by Visual Studio Code as per writers and I converted it to a notebook version because of the computation power issue andrun this code on colab by using google drive and loading image sets to Google Drive Folders.
+
+There were some minor changes in code like excluding Accimage since there were no way to install it to Colab and some of the configuration file changes applied.
+In this review work, single gpu is used and code run for less epoch compared to original version (1000 Epoch) so conditions are not %100 same.
+
+To run this code, config and bc_config files need to be modified as per the location of the input images and output results to be saved. There are also experiment configuration files for both.
+
+For following the order of running commands can be found in notebook however  below table is explaning the experiment of this work and its running order.
+
+![image](https://user-images.githubusercontent.com/119973966/216549715-b28a1562-8550-4c64-8c98-933e1003e170.png)
+
+
+Original Implemantation and Article is as follows.
 Implementation for ['Magnification Prior: A Self-Supervised Method for Learning Representations on Breast Cancer Histopathological Images'] (https://arxiv.org/abs/2203.07707) - Accepted in EEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2023
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/magnification-prior-a-self-supervised-method/breast-cancer-histology-image-classification)](https://paperswithcode.com/sota/breast-cancer-histology-image-classification?p=magnification-prior-a-self-supervised-method)
