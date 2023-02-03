@@ -10,7 +10,7 @@ In this review work, single gpu is used and code run for less epoch compared to 
 
 To run this code, config and bc_config files need to be modified as per the location of the input images and output results to be saved. There are also experiment configuration files for both.
 
-For following the order of running commands can be found in notebook however  below table is explaning the experiment of this work and its running order.
+For following the order of running commands can be found in notebook (Deep_Learning_Final_Project_NotebookVersion.ipynb) however  below table is explaning the experiment of this work and its running order.
 
 ![image](https://user-images.githubusercontent.com/119973966/216549715-b28a1562-8550-4c64-8c98-933e1003e170.png)
 
