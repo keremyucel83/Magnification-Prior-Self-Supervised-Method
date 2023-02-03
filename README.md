@@ -37,6 +37,8 @@ Change following folder configuration
 
 Original Implemantation and Article is as follows. Code can be still run using Visual Studio however codes needs to be run in terminal by using following order and codes.
 
+**Following part is forked from original repository and only Breakhist part is left and others are removed**
+
 
 Implementation for ['Magnification Prior: A Self-Supervised Method for Learning Representations on Breast Cancer Histopathological Images'] (https://arxiv.org/abs/2203.07707) - Accepted in EEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2023
 
