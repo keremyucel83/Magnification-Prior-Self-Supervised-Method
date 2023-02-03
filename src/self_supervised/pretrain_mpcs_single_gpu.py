@@ -1,5 +1,8 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
 
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
+
 import argparse
 import logging
 import os, sys, yaml
@@ -11,13 +14,13 @@ from torch import optim
 from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader, random_split
 
-from self_supervised.core import ssl_loss, models, pretrain, utility, trainer_MPCS
-sys.path.append(os.path.dirname(__file__))
+from self_supervised.core import ssl_loss, models, pretrain,  trainer_MPCS
+#sys.path.append(os.path.dirname(__file__))
 from self_supervised.apply import datasets, config, transform, augmentation_strategy
-sys.path.append(os.path.dirname(__file__))
+#sys.path.append(os.path.dirname(__file__))
 os.environ["KMP_WARNINGS"] = "FALSE"
 
-import bc_config
+#import bc_config
 
 import multiprocessing as mp
 
@@ -32,10 +35,10 @@ def create_config(config_exp):
 def pretrain_model(args_dict, fold):
     
     fold_root = os.path.join(args_dict["data_path"], fold, args_dict["data_portion"]) 
-    print(fold_root)
+  
     LR = args_dict["learning_rate"]["lr_only"]
     patience = args_dict["learning_rate"]["patience"]
-    gpu_no = (args_dict["computational_infra"]["fold_to_gpu_mapping"][fold])
+    gpu_no = 0 # (args_dict["computational_infra"]["fold_to_gpu_mapping"][fold])
     GPU = torch.device(f"cuda:{gpu_no}")
     pretraining_method = args_dict["method"]["name"]
     pair_sampling_method = args_dict["method"]["variant"]
@@ -43,7 +46,7 @@ def pretrain_model(args_dict, fold):
     version = args_dict["encoder"]["version"]
     batch_size_list = args_dict["batch_size_list"]
     epochs = args_dict["epochs"]    
-        
+    #print("******gpu no", gpu_no)
     # Get network for pretraining with MLP head
     model = None
     if "resnet" == args_dict["encoder"]["name"]:
@@ -116,6 +119,19 @@ def pretrain_model(args_dict, fold):
                 )
             trainer.train()
 
+# if __name__ == '__main__':
+
+#     parser = argparse.ArgumentParser(description='MPCS Pre-training on BreakHis')
+#     parser.add_argument('--config', help='Config file for the experiment')
+#     args = parser.parse_args()
+#     args_dict = create_config(args.config)
+
+#     #mp.set_start_method('spawn')
+#     for fold in list(args_dict["computational_infra"]["fold_to_gpu_mapping"].keys()):
+#         #pretrain_model(args_dict, fold)
+#         process = mp.Process(target=pretrain_model, args=(args_dict, fold))
+#         process.start()
+#         #process.join()
 
 
 if __name__ == '__main__':
@@ -125,9 +141,11 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args_dict = create_config(args.config)
 
-    #mp.set_start_method('spawn')
-    for fold in list(args_dict["computational_infra"]["fold_to_gpu_mapping"].keys()):
-        #pretrain_model(args_dict, fold)
-        process = mp.Process(target=pretrain_model, args=(args_dict, fold))
-        process.start()
-        #process.join()
+
+    args_dict2 = {"fold_0": 7,  "fold_1": 6,   "fold_2": 3,    "fold_3": 3, "fold_4": 4}
+
+    for fold in list(args_dict2.keys()):
+        pretrain_model(args_dict, fold)
+        #process = mp.Process(target=pretrain_model, args=(args_dict, fold))
+        #process.start()
+     

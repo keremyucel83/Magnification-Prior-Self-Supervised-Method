@@ -1,4 +1,6 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 
 from email.policy import strict
 import torchvision.models as models
@@ -9,7 +11,7 @@ import torch.nn.functional as F
 from efficientnet_pytorch import EfficientNet
 
 class Resnet_SSL(torch.nn.Module):
-    def __init__(self, version=50, projector=None, supervised_pretrained=None, simclr_pretrained=None):
+    def __init__(self, version=50, projector=None, supervised_pretrained=None, simclr_pretrained=None):      
         super(Resnet_SSL, self).__init__()
         if 18 == version:
             self.backbone = models.resnet18(pretrained = supervised_pretrained)
@@ -21,9 +23,7 @@ class Resnet_SSL(torch.nn.Module):
             self.backbone = models.resnet101(pretrained = supervised_pretrained)
         elif 152 == version:
             self.backbone = models.resnet152(pretrained = supervised_pretrained)
-
         self.backbone.fc = nn.Identity()
-
         # projector
         sizes = [2048] + list(map(int, projector.split('-')))
         layers = []
@@ -33,7 +33,6 @@ class Resnet_SSL(torch.nn.Module):
             layers.append(nn.ReLU(inplace=True))
         layers.append(nn.Linear(sizes[-2], sizes[-1], bias=False))
         self.projector = nn.Sequential(*layers)
-
         # normalization layer for the representations z1 and z2
         self.bn = nn.BatchNorm1d(sizes[-1], affine=False)
 

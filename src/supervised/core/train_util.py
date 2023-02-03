@@ -67,7 +67,7 @@ class Train_Util:
         with tqdm(total=(len(self.train_loader))) as (t):
             for patient_id, magnification, item_dict, binary_label, multi_label in tqdm(self.train_loader):
                 view = item_dict[magnification[0]]
-                view = view.cuda(self.device, non_blocking=True)                
+                view = view.cuda(self.device)#, non_blocking=True)                
                 target = binary_label.to(self.device)
                 outputs = self.model(view)
                 outputs = outputs.squeeze(1)
@@ -104,7 +104,7 @@ class Train_Util:
         with torch.no_grad():
             for patient_id, magnification, item_dict, binary_label, multi_label in tqdm(self.val_loader):
                 view = item_dict[magnification[0]]
-                view = view.cuda(self.device, non_blocking=True)                
+                view = view.cuda(self.device)#, non_blocking=True)                
                 target = binary_label.to(self.device)
                 outputs = self.model(view)
                 outputs = outputs.squeeze(1)
@@ -160,7 +160,7 @@ class Train_Util:
         with tqdm(total=(len(self.train_loader))) as (t):
             for example_id, part_id, item_dict, multi_label in tqdm(self.train_loader):
                 view = item_dict["image"]
-                view = view.cuda(self.device, non_blocking=True)
+                view = view.cuda(self.device)#, non_blocking=True)
                 multi_label = multi_label.type(torch.LongTensor)                
                 target = multi_label.to(self.device)
                 outputs = self.model(view)
@@ -240,7 +240,7 @@ class Train_Util:
             with tqdm(total=(len(self.val_loader))) as (t):
                 for example_id, part_id, item_dict, multi_label in tqdm(self.val_loader):
                     view = item_dict["image"]
-                    view = view.cuda(self.device, non_blocking=True)
+                    view = view.cuda(self.device)#, non_blocking=True)
                     multi_label = multi_label.type(torch.LongTensor)                
                     target = multi_label.to(self.device)
                     outputs = self.model(view)
@@ -367,7 +367,7 @@ class Train_Util:
         with torch.no_grad():
             for magnification, item_dict, binary_label, multi_label in tqdm(self.val_loader):
                 view = item_dict[magnification[0]]
-                view = view.cuda(self.device, non_blocking=True)                
+                view = view.cuda(self.device)#, non_blocking=True)                
                 target = binary_label.to(self.device)
                 outputs = self.model(view)
                 outputs = outputs.squeeze(1)

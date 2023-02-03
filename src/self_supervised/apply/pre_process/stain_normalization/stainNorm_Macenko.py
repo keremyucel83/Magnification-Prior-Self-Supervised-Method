@@ -1,4 +1,4 @@
-'''"""
+"""
 Stain normalization based on the method of:
 
 M. Macenko et al., ‘A method for normalizing histology slides for quantitative analysis’, in 2009 IEEE International Symposium on Biomedical Imaging: From Nano to Macro, 2009, pp. 1107–1110.
@@ -10,11 +10,14 @@ http://spams-devel.gforge.inria.fr/index.html
 Use with python via e.g https://anaconda.org/conda-forge/python-spams
 """
 
-from __future__ import division
 
+from __future__ import division
+import matplotlib.pyplot as plt
 import numpy as np
 #import stain_utils as ut
 import spams
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 
 def show_colors(C):
     """
@@ -254,4 +257,3 @@ class Normalizer(object):
         H = source_concentrations[:, 0].reshape(h, w)
         H = np.exp(-1 * H)
         return H
-'''

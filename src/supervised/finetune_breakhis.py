@@ -1,4 +1,7 @@
 '''Author- Prkaash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
+
 
 import numpy as np
 import json
@@ -57,7 +60,7 @@ def train_model(args_dict, fold, magnification):
     #4. Training (finetune) settings
     epochs = args_dict["epochs"]
     batch_size = args_dict["batch_size"]
-    threshold = args_dict["threshold"]
+    threshold = args_dict["threshold"] 
     LR = args_dict["learning_rate"]["lr_only"]
     patience = args_dict["learning_rate"]["patience"]
     early_stopping_patience = args_dict["early_stopping_patience"]
@@ -78,6 +81,8 @@ def train_model(args_dict, fold, magnification):
     result_stats_path = args_dict["results"]["result_stats_path"]
     os.makedirs(result_stats_path, exist_ok=True)
 
+    print(augmentation_level)
+
     augmentation_strategy = None
     if "low" == augmentation_level:
         augmentation_strategy = augmentation_03
@@ -88,7 +93,9 @@ def train_model(args_dict, fold, magnification):
     else:
         raise error ("wrong input for augmentation level parameter")
 
-   
+    print("datapath:",data_path)
+    print("fold",fold)
+    print("train data portion",train_data_portion)
     
 
     train_loader  = get_BreakHis_data_loader(
@@ -107,7 +114,8 @@ def train_model(args_dict, fold, magnification):
         image_type_list= [magnification],
         num_workers = workers
         )
-
+    
+    
 
     #Experiment description
     DP = 0
@@ -123,9 +131,12 @@ def train_model(args_dict, fold, magnification):
         DP = 40
     elif "train_20" == train_data_portion:
         DP = 20
-        
+
+    #print("train data portion",train_data_portion) 
+    #print("pretraining_method_type",pretraining_method_type)
     if "imagenet" == pretraining_method_type:
         
+        #print("I am inside of the IFFFFFFFFF")
         experiment_description = f"_{fold}_{magnification}_BreakHis_FT_{DP}_{encoder}{version}_{pretraining_method_type}_"
         downstream_task_model = None
         if "resnet" == encoder:
@@ -135,7 +146,7 @@ def train_model(args_dict, fold, magnification):
             print(f"Stop - loading weights for {fold}_{pretraining_method_type}_{encoder}{version}")
             downstream_task_model.model.fc = nn.Sequential(nn.Dropout(dropout), nn.Linear(num_ftrs, 1))
         
-        downstream_task_model = downstream_task_model.to(device)
+        downstream_task_model = downstream_task_model.to("cuda:0")
         criterion = nn.BCELoss()
         optimizer = torch.optim.Adam(downstream_task_model.parameters(), lr=LR, weight_decay= weight_decay)
         scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', factor=0.1 ,patience=patience, min_lr= 5e-3)
@@ -160,6 +171,7 @@ def train_model(args_dict, fold, magnification):
             )
         train_util.train_and_evaluate()
     else:
+        #print("I am inside of the else")
         for pretrained_encoder_dir in os.listdir(pretraining_checkpoint_base_path):
             
             if (fold in pretrained_encoder_dir) and (pretraining_method_type in pretrained_encoder_dir) and (pretraining_pair_sampling_method in pretrained_encoder_dir) and (pretraining_initial_weights in pretrained_encoder_dir) and (encoder in pretrained_encoder_dir and str(version) in pretrained_encoder_dir):
@@ -233,3 +245,5 @@ if __name__ == '__main__':
     for fold in list(args_dict["computational_infra"]["fold_to_gpu_mapping"].keys()):
         process = mp.Process(target=train_model, args=(args_dict, fold, "400X"))
         process.start()
+
+

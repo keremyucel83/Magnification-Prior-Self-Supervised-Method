@@ -1,5 +1,8 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
 
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
+
 import os
 import torch
 import cv2
@@ -187,8 +190,11 @@ class BreakHis_Dataset(nn.Module):
         self.label_binary_dict = {}
         self.label_multi_dict = {}
 
+        print("train pathfsdfsfsdfasdfasdfs",train_path)
+
         #print(os.listdir(train_path))
         for patient_dir_name in os.listdir(train_path):
+            print("patient_dir_name path",patient_dir_name)
             patient_uid = patient_dir_name.split('-')[1]
             binary_label = patient_dir_name.split('_')[1]
             multi_label = patient_dir_name.split('_')[2]

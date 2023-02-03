@@ -1,4 +1,4 @@
-'''"""
+"""
 Normalize a patch stain to the target image using the method of:
 
 E. Reinhard, M. Adhikhmin, B. Gooch, and P. Shirley, ‘Color transfer between images’, IEEE Computer Graphics and Applications, vol. 21, no. 5, pp. 34–41, Sep. 2001.
@@ -10,7 +10,8 @@ import cv2 as cv
 import numpy as np
 #from stain_utils import *
 
-
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 ### Some functions ###
 
 def standardize_brightness(I):
@@ -94,4 +95,3 @@ class Normalizer(object):
         norm2 = ((I2 - means[1]) * (self.target_stds[1] / stds[1])) + self.target_means[1]
         norm3 = ((I3 - means[2]) * (self.target_stds[2] / stds[2])) + self.target_means[2]
         return merge_back(norm1, norm2, norm3)
-'''

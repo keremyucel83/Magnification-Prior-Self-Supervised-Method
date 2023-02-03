@@ -1,4 +1,6 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se, Year- 2022'''
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 
 import numpy as np
 import json
@@ -26,7 +28,7 @@ from supervised.apply.datasets import get_BreakHis_data_loader, get_BreakHis_tes
 from supervised.apply.transform import train_transform, resize_transform
 from supervised.apply.augmentation_strategy import ft_augmentation
 from supervised.core.models import ResNet
-from self_supervised.core.models import ResNet_MLP
+from self_supervised.core.models import Resnet_SSL
 from supervised.core.train_util import Train_Util
 import bc_config
 
@@ -91,12 +93,12 @@ def test(model, test_loader, device, threshold):
 
 def test_model():
     
-    threshold = ###
-    fold_root = ###
-    device = ###
-    model_path = ###
-    data_apth = ###
-    magnification = ### 40x        
+    threshold = 10
+    fold_root = "/content/drive/MyDrive/DeepLearningProject/breast"
+    device = "cuda:0"
+    model_path = "/content/drive/MyDrive/DeepLearningProject/result/base_path"
+    data_path = "/content/drive/MyDrive/DeepLearningProject/breast"
+    magnification = "400"        
     
     
     test_loader = get_BreakHis_testdata_loader(data_path, transform = resize_transform,pre_processing=[], image_type_list= [magnification])

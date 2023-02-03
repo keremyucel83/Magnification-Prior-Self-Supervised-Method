@@ -1,12 +1,12 @@
 #'''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
 
-"data_path": "/home/datasets/BreaKHis_v1/histology_slides/breast"
+"data_path": "/content/drive/MyDrive/DeepLearningProject/breast"
 "data_portion": "train_60"
 
 #enocoder - ResNet bewing fixed encoder
 "encoder":
   "name": "resnet"
-  "version": "50"
+  "version": 50
   "pretrained": "imagenet"
   "projector": "1024-128"
   "checkpoint_path": None
@@ -18,8 +18,8 @@
   "temperature": 0.1
 
 #Training
-"epochs": 1000
-"batch_size_list": [14] #[28, 256, 512] 
+"epochs": 100
+"batch_size_list": [28] #[28, 256, 512] 
 "learning_rate":
   "lr_only": 0.00001
   "patience": 50
@@ -47,21 +47,21 @@
 #Computationals
 "computational_infra":
   "fold_to_gpu_mapping":
-    "Fold_0_5": 7
-    "Fold_1_5": 7
-    "Fold_2_5": 3
-    "Fold_3_5": 3
-    "Fold_4_5": 4
-  "workers": 40
-  "numexpr_num_threads": 2
+    "fold_0": 7
+    "fold_1": 6
+    "fold_2": 3
+    "fold_3": 3
+    "fold_4": 4
+  "workers": 8
+  "numexpr_num_threads": 10
 
 #Logs
 "logs":
-  "tensorboard_base_path": "/home/logs/tensorboard_bc/"
-  "tensorboard_file_path": None
-  "stats_file_path": None
+  "tensorboard_base_path": "/content/drive/MyDrive/DeepLearningProject/logs/pretrain_bc/base_path/"
+  "tensorboard_file_path": "/content/drive/MyDrive/DeepLearningProject/logs/pretrain_bc/file_path/"
+  "stats_file_path": "/content/drive/MyDrive/DeepLearningProject/logs/pretrain_bc/stats/"
 
 #Outcome
 "results":
-  "result_base_path": "/home/result/results_bc/"
-  "result_dir_path": None
+  "result_base_path": "/content/drive/MyDrive/DeepLearningProject/result/pretrain/base_path/"
+  "result_dir_path": "/content/drive/MyDrive/DeepLearningProject/result/pretrain/dir_path/"

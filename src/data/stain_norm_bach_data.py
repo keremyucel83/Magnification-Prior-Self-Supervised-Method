@@ -23,8 +23,8 @@ cnorm = {
     'sigma': np.array([0.6135447, 0.10989545, 0.0286032]),
 }
 
-images_path = "/home/datasets/BACH/images"
-normalized_images_path = "/home/datasets/BACH/images_stain_normalized"
+images_path = "/content/drive/MyDrive/DeepLearningProject/datasets/BACH/images"
+normalized_images_path = "/content/drive/MyDrive/DeepLearningProject/datasets/BACH/images_stain_normalized"
 
 classes_list = ["benign","insitu","invasive","normal"]
 

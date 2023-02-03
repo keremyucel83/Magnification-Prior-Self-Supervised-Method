@@ -18,13 +18,13 @@ from pathlib import Path
 import pickle
 
 
-root = '/home/datasets/BisQue/folds_data/'
+root = '/content/drive/MyDrive/DeepLearningProject/datasets/BisQue/folds_data/'
 
 folds = ['fold_0', 'fold_1', 'fold_2', 'fold_3', 'fold_4']
 parts_in_fold = ['train', 'test']
 category_list =['benign', 'malignant']
 
-output = '/home/prachh/datasets/BisQue/folds_metadata/'
+output = '/content/drive/MyDrive/DeepLearningProject/datasets/BisQue/folds_metadata/'
 
 for fold in folds:
     for data_part in parts_in_fold:

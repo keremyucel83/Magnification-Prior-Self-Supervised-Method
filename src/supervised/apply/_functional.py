@@ -1,4 +1,6 @@
 #borrwod files from pytoch library
+import sys
+sys.path.insert(0, '/usr/local/lib/python3.8/dist-packages/')
 
 import math
 import numbers
@@ -10,7 +12,9 @@ import numpy as np
 import torch
 from PIL import Image
 from torch import Tensor
-import accimage
+#import accimage
+import torchvision
+torchvision.set_image_backend('accimage')
 
 from supervised.apply import functional_pil as F_pil
 from supervised.apply import functional_tensor as F_t

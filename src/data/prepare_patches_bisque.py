@@ -18,13 +18,13 @@ from pathlib import Path
 from empatches import EMPatches
 
 
-root = '/home/datasets/BisQue/images/folds_data/'
+root = '/content/drive/MyDrive/DeepLearningProject/datasets/BisQue/images/folds_data/'
 
 folds = ['fold_0', 'fold_1','fold_2', 'fold_3', 'fold_4'] # 
 parts_in_fold = ['train', 'test']
 category_list =['benign', 'malignant']
 
-output = '/home/datasets/BisQue/folds_patches/'
+output = '/content/drive/MyDrive/DeepLearningProject/datasets/BisQue/folds_patches/'
 
 for fold in folds:
     for data_part in parts_in_fold:

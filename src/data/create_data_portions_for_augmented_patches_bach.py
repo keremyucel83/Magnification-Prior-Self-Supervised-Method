@@ -11,15 +11,15 @@ import pandas as pd
 from pathlib import Path
 
 
-ref = '/home/datasets/BACH/folds_data/'
+ref = '/content/drive/MyDrive/DeepLearningProject/datasets/BACH/folds_data/'
 
 folds = ['fold_0', 'fold_1', 'fold_2', 'fold_3', 'fold_4']
 parts_in_fold = ['train']
 target_parts_in_fold = ['train_20', 'train_40', 'train_60', 'train_80']
 category_list =['benign', 'insitu', 'invasive', 'normal']
 
-output1 = '/home/datasets/BACH/folds_patches/'
-output2 = '/home/datasets/BACH/folds_augmented_patches/'
+output1 = '/content/drive/MyDrive/DeepLearningProject/datasets/BACH/folds_patches/'
+output2 = '/content/drive/MyDrive/DeepLearningProject/datasets/BACH/folds_augmented_patches/'
 
 for fold in folds:
     for data_part in parts_in_fold:

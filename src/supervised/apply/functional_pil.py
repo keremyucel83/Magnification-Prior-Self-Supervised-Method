@@ -1,4 +1,9 @@
+# pip install --prefix=/opt/intel/ipp ipp-devel;
 #borrowed
+
+import sys
+sys.path.insert(0, '/usr/local/lib/python3.8/dist-packages/')
+
 import numbers
 from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
@@ -7,12 +12,13 @@ import torch
 from PIL import Image, ImageOps, ImageEnhance
 from typing_extensions import Literal
 
-'''try:
+try:
     import accimage
 except ImportError:
-    accimage = None'''
-    
-import accimage
+    accimage = None
+  
+
+#import accimage
 from supervised.apply import _pil_constants
 
 

@@ -1,4 +1,6 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 
 import argparse
 import logging

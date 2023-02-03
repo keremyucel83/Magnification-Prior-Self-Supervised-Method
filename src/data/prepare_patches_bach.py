@@ -18,13 +18,13 @@ from pathlib import Path
 from empatches import EMPatches
 
 
-root = '/home/datasets/BACH/folds_data/'
+root = '/content/drive/MyDrive/DeepLearningProject/datasets/BACH/folds_data/'
 
 folds = ['fold_0', 'fold_1', 'fold_2', 'fold_3', 'fold_4']
 parts_in_fold = ['train_05', 'train_10', 'train_20', 'train_40', 'train_60', 'train_80', 'train', 'test', 'val']
 category_list =['benign', 'insitu', 'invasive', 'normal']
 
-output = '/home/prachh/datasets/BACH/folds_patches/'
+output = '/content/drive/MyDrive/DeepLearningProject/datasets/BACH/folds_patches/'
 
 
 for fold in folds:

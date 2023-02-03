@@ -1,6 +1,8 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 
-from albumentations.core.composition import Transforms
+#from albumentations.core.composition import Transforms ### not required changed by Kerem Yücel 2023
 from cv2 import transform
 from torchvision import transforms as t
 import albumentations as A

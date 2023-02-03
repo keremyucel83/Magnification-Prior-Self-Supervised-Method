@@ -14,5 +14,5 @@ gpu4 = 'cuda:4'
 gpu5 = 'cuda:5'
 gpu6 = 'cuda:6'
 
-result_path = '/home/result/results_bc/'
-tensorboard_path = '/home/logs/tensorboard_bc/'
+result_path = '/content/drive/MyDrive/DeepLearningProject/result/results_bc'
+tensorboard_path = '/content/drive/MyDrive/DeepLearningProject/logs/tensorboard_bc'

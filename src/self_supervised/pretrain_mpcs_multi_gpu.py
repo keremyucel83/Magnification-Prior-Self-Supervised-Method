@@ -1,5 +1,8 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
 
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
+
 import argparse
 from base64 import encode
 import logging
@@ -19,10 +22,10 @@ from torch.utils.data import DataLoader, random_split
 import logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
-from self_supervised.core import ssl_loss, models, optimizers, pretrain, utility, trainer_MPCS
-sys.path.append(os.path.dirname(__file__))
+from self_supervised.core import ssl_loss, models, optimizers, pretrain, trainer_MPCS #, utility excluded
+#sys.path.append(os.path.dirname(__file__))
 from self_supervised.apply import datasets, config, transform, augmentation_strategy
-sys.path.append(os.path.dirname(__file__))
+#sys.path.append(os.path.dirname(__file__))
 os.environ["KMP_WARNINGS"] = "FALSE"
 
 import bc_config

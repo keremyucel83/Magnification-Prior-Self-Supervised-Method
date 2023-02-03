@@ -21,8 +21,8 @@ from pathlib import Path
 k_folds = 5
 random_state = None #give random seed (20 ~ 100)
 
-root = '/home/datasets/BisQue/images/'
-fold_data_path = '/home/datasets/BisQue/images/folds_data/'
+root = '/content/drive/MyDrive/DeepLearningProject/datasets/BisQue/images/'
+fold_data_path = '/content/drive/MyDrive/DeepLearningProject/datasets/BisQue/images/folds_data/'
 
 category_list =['benign', 'malignant']
 

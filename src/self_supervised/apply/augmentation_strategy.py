@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
+
 from torchvision import transforms
 import albumentations as A
 from albumentations.pytorch import ToTensorV2

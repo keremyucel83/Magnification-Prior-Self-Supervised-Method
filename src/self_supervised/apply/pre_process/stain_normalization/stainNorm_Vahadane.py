@@ -1,4 +1,4 @@
-'''"""
+"""
 Stain normalization inspired by method of:
 
 A. Vahadane et al., ‘Structure-Preserving Color Normalization and Sparse Stain Separation for Histological Images’, IEEE Transactions on Medical Imaging, vol. 35, no. 8, pp. 1962–1971, Aug. 2016.
@@ -11,12 +11,13 @@ Use with python via e.g https://anaconda.org/conda-forge/python-spams
 """
 
 from __future__ import division
-
+import matplotlib.pyplot as plt
 import spams
 import numpy as np
 #import stain_utils as ut
 import cv2
-
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 
 def show_colors(C):
     """
@@ -242,4 +243,3 @@ class Normalizer(object):
         H = source_concentrations[:, 0].reshape(h, w)
         H = np.exp(-1 * H)
         return H
-'''

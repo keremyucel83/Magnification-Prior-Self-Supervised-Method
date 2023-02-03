@@ -21,8 +21,8 @@ from pathlib import Path
 k_folds = 5
 random_state = None #give random seed (20 ~ 100)
 
-root = '/home/datasets/BACH/images_stain_normalized/'
-fold_data_path = '/home/datasets/BACH/folds_data/'
+root = '/content/drive/MyDrive/DeepLearningProject/datasets/BACH/images_stain_normalized/'
+fold_data_path = '/content/drive/MyDrive/DeepLearningProject/datasets/BACH/folds_data/'
 
 category_list =['benign', 'insitu', 'invasive', 'normal']
 

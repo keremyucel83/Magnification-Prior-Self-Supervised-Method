@@ -14,7 +14,8 @@ import spams
 import matplotlib.pyplot as plt
 import PIL
 from PIL import Image
-
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
 
 ##########################################
 

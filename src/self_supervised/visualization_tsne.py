@@ -1,5 +1,8 @@
 '''Author- Prakash Chandra Chhipa, Email- prakash.chandra.chhipa@ltu.se/prakash.chandra.chhipa@gmail.com, Year- 2022'''
 
+import sys
+sys.path.append('/content/drive/MyDrive/DeepLearningProject/github/src')
+
 import argparse
 import logging
 import os, sys, yaml
@@ -13,7 +16,7 @@ from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader, random_split
 from supervised.apply.datasets import get_BreakHis_data_loader,get_BreakHis_testdata_loader 
 from supervised.apply.transform import train_transform, resize_transform
-from self_supervised.core import ssl_loss, models, pretrain, utility, trainer_MPCS
+from self_supervised.core import ssl_loss, models, pretrain,  trainer_MPCS #utility
 sys.path.append(os.path.dirname(__file__))
 from self_supervised.apply import datasets, config, transform, augmentation_strategy
 sys.path.append(os.path.dirname(__file__))
@@ -51,7 +54,7 @@ def get_embeddings(fold_root, portion, model_path, magnification):
     version = 50
     device = torch.device("cuda:7") #change according to GPU device availability
 
-    model = models.Dilated_Resnet_SSL(version = version, projector = projector, supervised_pretrained=False).cuda(device)
+    model = models.Dilated_Resnet_SSL(version = version, projector = projector, supervised_pretrained=False)#.cuda(device)
     checkpoint = torch.load(model_path)["model"]
     checkpoint_new = {}
     for key in checkpoint.keys():
@@ -71,7 +74,7 @@ def get_embeddings(fold_root, portion, model_path, magnification):
     with torch.no_grad():
         for patient_id, magnification, item_dict, binary_label, multi_label in tqdm(test_loader):
             view = item_dict[magnification[0]]
-            view = view.cuda(device, non_blocking=True)                
+            view = view.cuda(device)#, non_blocking=True)                
             
             outputs = model(view)
             
@@ -112,22 +115,22 @@ def plot_representations(file_name,data, labels, n_images = None):
         ax.scatter(xi, yi, c=colors[i], label=str(legend_dict[u]), cmap = 'viridis')
     ax.legend()
     
-    plt.savefig(f'/home/output/_{file_name}.png')
+    plt.savefig(f'/content/drive/MyDrive/DeepLearningProject/output/_{file_name}.png')
 
 if __name__ == "__main__":
     
     model_path_dict =  {
-        "op" : "", #give actual model full path
-        "rp" : "", #give actual model full path
-        "fp" : ""  #give actual model full path
+        "op" : "/content/drive/MyDrive/DeepLearningProject/result/results_bc/_Fold_0_5_MPCS_FP_resnet50_imagenet_/14/100/backbone_epoch_48_loss_0.018457337935913854.pth", #give actual model full path
+        "rp" : "/content/drive/MyDrive/DeepLearningProject/result/results_bc/_Fold_0_5_MPCS_FP_resnet50_imagenet_/14/100/backbone_epoch_48_loss_0.018457337935913854.pth", #give actual model full path
+        "fp" : "/content/drive/MyDrive/DeepLearningProject/result/results_bc/_Fold_0_5_MPCS_FP_resnet50_imagenet_/14/100/backbone_epoch_48_loss_0.018457337935913854.pth"  #give actual model full path
     }
     
     data_path_dict = {
-        "0" : "/home/datasets/BreaKHis_v1/histology_slides/breast/Fold_0_5/",
-        "1" : "/home/datasets/BreaKHis_v1/histology_slides/breast/Fold_1_5/",
-        "2" : "/home/datasets/BreaKHis_v1/histology_slides/breast/Fold_2_5/",
-        "3" : "/home/datasets/BreaKHis_v1/histology_slides/breast/Fold_3_5/",
-        "4" : "/home/datasets/BreaKHis_v1/histology_slides/breast/Fold_4_5/"
+        "0" : "/content/drive/MyDrive/DeepLearningProject/breast/fold_0/",
+        "1" : "/content/drive/MyDrive/DeepLearningProject/breast/fold_1/",
+        "2" : "/content/drive/MyDrive/DeepLearningProject/breast/fold_2/",
+        "3" : "/content/drive/MyDrive/DeepLearningProject/breast/fold_3/",
+        "4" : "/content/drive/MyDrive/DeepLearningProject/breast/fold_4/"
     }
    
     portion_list = ["test_20"]

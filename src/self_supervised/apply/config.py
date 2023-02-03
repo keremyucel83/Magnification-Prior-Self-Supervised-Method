@@ -19,7 +19,7 @@ gpu5 = 'cuda:5'
 gpu6 = 'cuda:6'
 gpu7 = 'cuda:7'
 
-result_path = '/home/workspace/data/results/results_bc/'
-tensorboard_path = '/home/workspace/data/results/tensorboard_bc/'
+result_path = '/content/drive/MyDrive/DeepLearningProject/results/results_bc/'
+tensorboard_path = '/content/drive/MyDrive/DeepLearningProject/results/tensorboard_bc/'
 
 
