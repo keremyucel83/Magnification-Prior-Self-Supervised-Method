@@ -1,8 +1,7 @@
 # Magnification-Prior-Self-Supervised-Method Result Review
 
-In this project, a self supervised method, suggested by Chhipa, P., Upadhyay,1 R., Pihlgren, G., Saini, R., Uchida, S., Liwicki, M. (2022, September 08) for2
-detecting malign on Histopathological images called Magnification-Prior-Self-3 Supervised-Method will be reviewed. Project aims to reproduce results ex-4
-plained in the original article and reproduce the results to help researchers focusing similar image classification problem.
+In this forked reporsitory, a self supervised method, suggested by Chhipa, P., Upadhyay,1 R., Pihlgren, G., Saini, R., Uchida, S., Liwicki, M. (2022, September 08) for 
+detecting malign on Histopathological images called Magnification-Prior-Self- Supervised-Method will be reviewed. Project aims to reproduce results explained in the original article and reproduce the results to help researchers focusing similar image classification problem.
 
 Implementation for ['Magnification Prior: A Self-Supervised Method for Learning Representations on Breast Cancer Histopathological Images'] (https://arxiv.org/abs/2203.07707) - Accepted in EEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2023
 
