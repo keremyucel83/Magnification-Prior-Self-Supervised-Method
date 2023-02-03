@@ -37,14 +37,14 @@ bach_label_dict = {bach_label_benign:0,bach_label_invasive:1,bach_label_insitu:2
 bach_label_list = [bach_label_benign,bach_label_invasive,bach_label_insitu,bach_label_normal]
 
 
-data_path_fold0 = '/home/datasets/breast/Fold_0_5/'
-data_path_fold1 = '/home/datasets/breast/Fold_1_5/'
-data_path_fold2 = '/home/datasets/breast/Fold_2_5/'
-data_path_fold3 = '/home/datasets/breast/Fold_3_5/'
-data_path_fold4 = '/home/datasets/breast/Fold_4_5/'
+data_path_fold0 = '/content/drive/MyDrive/DeepLearningProject/breast/fold_0/'
+data_path_fold1 = '/content/drive/MyDrive/DeepLearningProject/breast/fold_1/'
+data_path_fold2 = '/content/drive/MyDrive/DeepLearningProject/breast/fold_2/'
+data_path_fold3 = '/content/drive/MyDrive/DeepLearningProject/breast/fold_3/'
+data_path_fold4 = '/content/drive/MyDrive/DeepLearningProject/breast/fold_4/'
 
-result_path = '/home/result/results_bc_5fold/'
-tensorboard_path = '/home/logs/tensorboard_bc_5fold/'
+result_path = '/content/drive/MyDrive/DeepLearningProject/result/results_bc_5fold/'
+tensorboard_path = '/content/drive/MyDrive/DeepLearningProject/logs/tensorboard_bc_5fold/'
 
 #GPU
 gpu0 = torch.device("cuda:0")
