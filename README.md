@@ -17,16 +17,21 @@ To run this code, config and bc_config files need to be modified as per the loca
 
 **1 To run data preparation for Break His ./src/data/prepare_data_breakhis.py **
 Change following folder configuration
+
 ```root = '/home/datasets/BreaKHis_v1/histology_slides/breast'```
 
 **2.#src/bc_config.py**
 **Change following folder configuration**
+
 ```result_path = '/home/result/results_bc_5fold/'```
+
 ```tensorboard_path = '/home/logs/tensorboard_bc_5fold/'```
 
 **3. /src/supervised/apply/config.py**
 **Change following folder configuration**
+
 ```result_path = '/home/result/results_bc/'```
+
 ```tensorboard_path = '/home/logs/tensorboard_bc/'```
 
 
