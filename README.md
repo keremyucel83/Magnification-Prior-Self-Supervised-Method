@@ -35,7 +35,9 @@ Change following folder configuration
 ```tensorboard_path = '/home/logs/tensorboard_bc/'```
 
 
-Original Implemantation and Article is as follows.
+Original Implemantation and Article is as follows. Code can be still run using Visual Studio however codes needs to be run in terminal by using following order and codes.
+
+
 Implementation for ['Magnification Prior: A Self-Supervised Method for Learning Representations on Breast Cancer Histopathological Images'] (https://arxiv.org/abs/2203.07707) - Accepted in EEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2023
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/magnification-prior-a-self-supervised-method/breast-cancer-histology-image-classification)](https://paperswithcode.com/sota/breast-cancer-histology-image-classification?p=magnification-prior-a-self-supervised-method)
