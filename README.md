@@ -8,11 +8,26 @@ Repository is created by Visual Studio Code as per writers and I converted it to
 There were some minor changes in code like excluding Accimage since there were no way to install it to Colab and some of the configuration file changes applied.
 In this review work, single gpu is used and code run for less epoch compared to original version (1000 Epoch) so conditions are not %100 same.
 
-To run this code, config and bc_config files need to be modified as per the location of the input images and output results to be saved. There are also experiment configuration files for both.
 
 For following the order of running commands can be found in notebook (Deep_Learning_Final_Project_NotebookVersion.ipynb) however  below table is explaning the experiment of this work and its running order.
 
 ![image](https://user-images.githubusercontent.com/119973966/216549715-b28a1562-8550-4c64-8c98-933e1003e170.png)
+
+To run this code, config and bc_config files need to be modified as per the location of the input images and output results to be saved. There are also experiment configuration files for both.
+
+/src/data/prepare_data_breakhis.py 
+
+```root = '/home/datasets/BreaKHis_v1/histology_slides/breast'```
+
+src/bc_config.py
+
+```result_path = '/home/result/results_bc_5fold/'```
+```tensorboard_path = '/home/logs/tensorboard_bc_5fold/'```
+
+/src/supervised/apply/config.py
+
+```result_path = '/home/result/results_bc/'```
+```tensorboard_path = '/home/logs/tensorboard_bc/'```
 
 
 Original Implemantation and Article is as follows.
