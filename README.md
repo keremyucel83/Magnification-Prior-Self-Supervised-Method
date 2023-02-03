@@ -38,14 +38,11 @@ Change following folder configuration
 Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py``` file needs to be run and relevant configuration file  from ```src/self_supervised/experiment_config/single_gpu/```
 
 
-
 ```"data_path": "/content/drive/MyDrive/DeepLearningProject/breast"```
 
 ```"checkpoint_path": "/content/drive/MyDrive/DeepLearningProject/checkpoint/"```
 
 ```#Logs```
-
-```"logs":```
 
  ``` "tensorboard_base_path": "/content/drive/MyDrive/DeepLearningProject/logs/pretrain_bc/base_path/"```
  
@@ -53,16 +50,12 @@ Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py
   
   ```"stats_file_path": "/content/drive/MyDrive/DeepLearningProject/logs/pretrain_bc/stats/"```
   
-```
 ```#Outcome```
-
-```"results":```
 
  ``` "result_base_path": "/content/drive/MyDrive/DeepLearningProject/result/pretrain/base_path/"```
  
  ``` "result_dir_path": "/content/drive/MyDrive/DeepLearningProject/result/pretrain/dir_path/"```
  
-
 
 Original Implemantation and Article is as follows. Code can be still run using Visual Studio however codes needs to be run in terminal by using following order and codes.
 
