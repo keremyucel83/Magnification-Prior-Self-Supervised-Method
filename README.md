@@ -58,7 +58,7 @@ Change following folder configuration
  
  5.  As final steps of Fine Tuning Task, config files inside of folder  ```/src/supervised/experiment_config/```  needs to be updated. Following parts need to be modified.
  
- "data_path": "/content/drive/MyDrive/DeepLearningProject/breast"
+ ``` "data_path": "/content/drive/MyDrive/DeepLearningProject/breast"``` 
 
  
  ``` #Logs ``` 
