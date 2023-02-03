@@ -56,6 +56,21 @@ Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py
  
  ``` "result_dir_path": "/content/drive/MyDrive/DeepLearningProject/result/pretrain/dir_path/"```
  
+ As final steps of Fine Tuning Task, config files inside of folder  ```/src/supervised/experiment_config/```  needs to be updated. Following parts need to be modified.
+ 
+ "data_path": "/content/drive/MyDrive/DeepLearningProject/breast"
+
+ 
+ ``` #Logs ``` 
+   ``` "tensorboard_base_path": "/content/drive/MyDrive/DeepLearningProject/logs/fine_tuning_tensorboard_bc/base_path/" ``` 
+ ```   "tensorboard_file_path": "/content/drive/MyDrive/DeepLearningProject/logs/fine_tuning_tensorboard_bc/file_path/" ``` 
+  ```  "stats_file_path": "/content/drive/MyDrive/DeepLearningProject/logs/fine_tuning_tensorboard_bc/stat_files/" ``` 
+
+ ``` #Outcome ``` 
+ ```   "result_base_path": "/content/drive/MyDrive/DeepLearningProject/result/fine_tuning/base_path/" ``` 
+  ```  "result_stats_path": "/content/drive/MyDrive/DeepLearningProject/result/fine_tuning/stats_files/" ``` 
+  ```  "result_dir_path": "/content/drive/MyDrive/DeepLearningProject/result/fine_tuning/dir_path/" ``` 
+ 
 
 Original Implemantation and Article is as follows. Code can be still run using Visual Studio however codes needs to be run in terminal by using following order and codes.
 
