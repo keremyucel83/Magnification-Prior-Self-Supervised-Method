@@ -62,6 +62,7 @@ Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py
 
  
  ``` #Logs ``` 
+ 
    ``` "tensorboard_base_path": "/content/drive/MyDrive/DeepLearningProject/logs/fine_tuning_tensorboard_bc/base_path/" ``` 
    
  ```   "tensorboard_file_path": "/content/drive/MyDrive/DeepLearningProject/logs/fine_tuning_tensorboard_bc/file_path/" ``` 
@@ -69,6 +70,7 @@ Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py
   ```  "stats_file_path": "/content/drive/MyDrive/DeepLearningProject/logs/fine_tuning_tensorboard_bc/stat_files/" ``` 
 
  ``` #Outcome ``` 
+ 
  ```   "result_base_path": "/content/drive/MyDrive/DeepLearningProject/result/fine_tuning/base_path/" ``` 
  
   ```  "result_stats_path": "/content/drive/MyDrive/DeepLearningProject/result/fine_tuning/stats_files/" ``` 
