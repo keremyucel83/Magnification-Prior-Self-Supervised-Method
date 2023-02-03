@@ -15,16 +15,16 @@ For following the order of running commands can be found in notebook (Deep_Learn
 
 To run this code, config and bc_config files need to be modified as per the location of the input images and output results to be saved. There are also experiment configuration files for both.
 
-/src/data/prepare_data_breakhis.py 
+1.#/src/data/prepare_data_breakhis.py 
 
 ```root = '/home/datasets/BreaKHis_v1/histology_slides/breast'```
 
-src/bc_config.py
+#src/bc_config.py
 
 ```result_path = '/home/result/results_bc_5fold/'```
 ```tensorboard_path = '/home/logs/tensorboard_bc_5fold/'```
 
-/src/supervised/apply/config.py
+#/src/supervised/apply/config.py
 
 ```result_path = '/home/result/results_bc/'```
 ```tensorboard_path = '/home/logs/tensorboard_bc/'```
