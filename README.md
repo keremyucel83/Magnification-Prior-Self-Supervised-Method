@@ -35,7 +35,7 @@ Change following folder configuration
 ```tensorboard_path = '/home/logs/tensorboard_bc/'```
 
 
-Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py``` file needs to be run and relevant configuration file  from ```src/self_supervised/experiment_config/single_gpu/```
+4. Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py``` file needs to be run and relevant configuration file  from ```src/self_supervised/experiment_config/single_gpu/```
 
 
 ```"data_path": "/content/drive/MyDrive/DeepLearningProject/breast"```
@@ -56,7 +56,7 @@ Once the preparation is done, ```src/self-supervised/pretrain_mpcs_single_gpu.py
  
  ``` "result_dir_path": "/content/drive/MyDrive/DeepLearningProject/result/pretrain/dir_path/"```
  
- As final steps of Fine Tuning Task, config files inside of folder  ```/src/supervised/experiment_config/```  needs to be updated. Following parts need to be modified.
+ 5.  As final steps of Fine Tuning Task, config files inside of folder  ```/src/supervised/experiment_config/```  needs to be updated. Following parts need to be modified.
  
  "data_path": "/content/drive/MyDrive/DeepLearningProject/breast"
 
